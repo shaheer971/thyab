@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -27,6 +27,18 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+    
+    /* Brand colors */
+    --brand-50: 225 100% 97%;
+    --brand-100: 226 100% 94%;
+    --brand-200: 226 93% 89%;
+    --brand-300: 226 97% 82%;
+    --brand-400: 227 96% 73%;
+    --brand-500: 227 96% 65%;
+    --brand-600: 228 96% 58%;
+    --brand-700: 230 94% 51%;
+    --brand-800: 232 83% 45%;
+    --brand-900: 234 76% 40%;
   }
 
   .dark {
@@ -59,37 +71,34 @@
   
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
     overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight;
+    @apply font-bold tracking-tight;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
   
   .gradient-text {
     @apply bg-gradient-to-r from-brand-600 to-brand-800 text-transparent bg-clip-text;
   }
   
-  .hero-wave-pattern {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    z-index: -1;
-    background-image: url('/lovable-uploads/ea5d915b-b7de-4f36-8570-93e54188d466.png');
-    background-size: cover;
-    background-position: center;
-    mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   }
   
+  /* Card hover effects */
   .feature-card {
-    @apply rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-200/40 hover:-translate-y-1 bg-white border border-slate-200;
+    @apply rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white border border-slate-200;
   }
   
   .statistic-card {
