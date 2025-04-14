@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { ChartBarSquare, Users, ShoppingBag, TrendingUp } from 'lucide-react';
+import { BarChart3, Users, ShoppingBag, TrendingUp } from 'lucide-react';
 
 const stats = [
   {
@@ -21,7 +21,7 @@ const stats = [
     name: 'Revenue Tracked',
     value: '$120M+',
     description: 'managed annually',
-    icon: <ChartBarSquare className="h-6 w-6 text-emerald-600" />,
+    icon: <BarChart3 className="h-6 w-6 text-emerald-600" />,
     color: 'bg-emerald-50'
   },
   {

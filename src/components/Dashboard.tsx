@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { LineChart, BarChart, Wallet, ArchiveCheck, ArrowUpRight } from 'lucide-react';
+import { LineChart, BarChart, Wallet, Archive, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Dashboard = () => {
@@ -69,7 +69,7 @@ const Dashboard = () => {
               
               <div className="flex items-start gap-4">
                 <div className="bg-blue-50 p-3 rounded-lg">
-                  <ArchiveCheck className="h-6 w-6 text-blue-600" />
+                  <Archive className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Order Management</h3>
