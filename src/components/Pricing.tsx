@@ -95,12 +95,10 @@ const Pricing = () => {
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute top-0 left-0 right-0">
-                  <div className="flex justify-center -translate-y-1/2">
-                    <div className="bg-brand-600 text-white text-xs font-bold py-1.5 px-6 rounded-full flex items-center">
-                      <Star className="w-3.5 h-3.5 mr-1.5 fill-white" />
-                      MOST POPULAR
-                    </div>
+                <div className="absolute top-0 left-0 w-full flex justify-center">
+                  <div className="bg-brand-600 text-white text-xs font-bold py-1.5 px-6 rounded-full flex items-center transform -translate-y-1/2">
+                    <Star className="w-3.5 h-3.5 mr-1.5 fill-white" />
+                    MOST POPULAR
                   </div>
                 </div>
               )}

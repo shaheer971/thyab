@@ -2,10 +2,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    quote: "Thvab has completely transformed how we manage our tailoring business. The customer management system alone has saved us hours of work every week.",
+    quote: "Thyab has completely transformed how we manage our tailoring business. The customer management system alone has saved us hours of work every week.",
     author: "Ahmed Al-Harbi",
     position: "Owner, Premium Thobes",
     company: "Riyadh",
@@ -21,7 +22,7 @@ const testimonials = [
     rating: 5
   },
   {
-    quote: "As someone who manages multiple tailoring shops, Thvab's analytics features give me insights I never had before. I can now make data-driven decisions that improve our bottom line.",
+    quote: "As someone who manages multiple tailoring shops, Thyab's analytics features give me insights I never had before. I can now make data-driven decisions that improve our bottom line.",
     author: "Khalid Al-Otaibi",
     position: "Business Owner, Elite Thobe Collection",
     company: "Dammam",
@@ -42,10 +43,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      <div className="absolute top-0 inset-x-0 h-40 bg-indigo-50" aria-hidden="true" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" aria-hidden="true" />
-      
+    <section className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,59 +58,64 @@ const Testimonials = () => {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Loved by Tailoring Businesses</h2>
           <p className="text-lg text-slate-600">
-            Hear from tailoring business owners who have transformed their operations with Thvab.
+            Hear from tailoring business owners who have transformed their operations with Thyab.
           </p>
         </motion.div>
         
-        <div className="max-w-5xl mx-auto relative">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-            <div className="lg:col-span-2 flex flex-col items-center lg:items-end">
-              <div className="w-40 h-40 md:w-64 md:h-64 rounded-full border-8 border-white shadow-xl overflow-hidden">
-                <img 
-                  src={testimonials[currentIndex].avatar} 
-                  alt={testimonials[currentIndex].author} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5 }}
-              className="lg:col-span-3 bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-slate-200 relative"
-            >
-              <div className="absolute -top-6 -left-6 text-amber-400">
-                <Quote className="w-12 h-12 fill-amber-50" />
-              </div>
-              
-              <div className="flex mb-6">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              
-              <blockquote className="text-xl md:text-2xl text-slate-800 mb-8 italic">
-                "{testimonials[currentIndex].quote}"
-              </blockquote>
-              
-              <div>
-                <p className="font-bold text-lg text-slate-900">{testimonials[currentIndex].author}</p>
-                <p className="text-slate-600">{testimonials[currentIndex].position}, {testimonials[currentIndex].company}</p>
-              </div>
-            </motion.div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`rounded-2xl bg-white p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 relative ${
+                  index === currentIndex ? 'md:scale-105 md:shadow-xl' : ''
+                }`}
+              >
+                <div className="absolute -top-6 -left-6 text-amber-400">
+                  <Quote className="w-12 h-12 fill-amber-50" />
+                </div>
+                
+                <div className="flex mb-6">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                
+                <blockquote className="text-lg text-slate-800 mb-8 italic">
+                  "{testimonial.quote}"
+                </blockquote>
+                
+                <div className="flex items-center mt-6">
+                  <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-white shadow-md">
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={testimonial.author} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900">{testimonial.author}</p>
+                    <p className="text-slate-600 text-sm">{testimonial.position}, {testimonial.company}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
           
           <div className="flex justify-center mt-10 space-x-4">
-            <button 
+            <Button 
               onClick={prevTestimonial} 
-              className="p-3 rounded-full bg-white border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors"
+              variant="outline"
+              className="p-3 rounded-full"
+              size="icon"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5 text-slate-700" />
-            </button>
+            </Button>
             
             <div className="flex space-x-2 items-center">
               {testimonials.map((_, index) => (
@@ -127,13 +130,15 @@ const Testimonials = () => {
               ))}
             </div>
             
-            <button 
+            <Button 
               onClick={nextTestimonial} 
-              className="p-3 rounded-full bg-white border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors"
+              variant="outline"
+              className="p-3 rounded-full"
+              size="icon"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5 text-slate-700" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

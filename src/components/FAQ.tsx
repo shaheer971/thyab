@@ -5,36 +5,36 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: "How does Thvab help my tailoring business?",
-    answer: "Thvab streamlines your entire tailoring operation by providing tools for order management, customer information storage, measurements tracking, appointment scheduling, WhatsApp notifications, and detailed business analytics - all designed specifically for thobe tailoring businesses."
+    question: "How does Thyab help my tailoring business?",
+    answer: "Thyab streamlines your entire tailoring operation by providing tools for order management, customer information storage, measurements tracking, appointment scheduling, WhatsApp notifications, and detailed business analytics - all designed specifically for thobe tailoring businesses."
   },
   {
-    question: "Is Thvab suitable for small tailoring shops?",
-    answer: "Absolutely! Thvab is designed to scale with your business. Whether you're a small shop with a single tailor or a larger operation with multiple locations, our platform adapts to your needs and grows with you."
+    question: "Is Thyab suitable for small tailoring shops?",
+    answer: "Absolutely! Thyab is designed to scale with your business. Whether you're a small shop with a single tailor or a larger operation with multiple locations, our platform adapts to your needs and grows with you."
   },
   {
-    question: "Do I need technical knowledge to use Thvab?",
-    answer: "Not at all. Thvab features an intuitive interface designed for tailors, not tech experts. We offer a simple onboarding process, helpful tutorials, and responsive customer support to ensure you can start using the system immediately."
+    question: "Do I need technical knowledge to use Thyab?",
+    answer: "Not at all. Thyab features an intuitive interface designed for tailors, not tech experts. We offer a simple onboarding process, helpful tutorials, and responsive customer support to ensure you can start using the system immediately."
   },
   {
     question: "How does the WhatsApp integration work?",
-    answer: "Thvab connects with WhatsApp Business API to send automated messages to your customers. You can notify them about order confirmations, status updates, delivery readiness, and promotional offers - all through templates you can customize to match your business style."
+    answer: "Thyab connects with WhatsApp Business API to send automated messages to your customers. You can notify them about order confirmations, status updates, delivery readiness, and promotional offers - all through templates you can customize to match your business style."
   },
   {
     question: "Can I track customer measurements and preferences?",
-    answer: "Yes! Thvab includes a comprehensive customer profile system where you can store detailed measurements, fabric preferences, style choices, and order history. This makes repeat orders faster and ensures consistency across all customer interactions."
+    answer: "Yes! Thyab includes a comprehensive customer profile system where you can store detailed measurements, fabric preferences, style choices, and order history. This makes repeat orders faster and ensures consistency across all customer interactions."
   },
   {
-    question: "Is my business data secure with Thvab?",
-    answer: "Security is our priority. Thvab uses industry-standard encryption, secure cloud storage, regular backups, and strict access controls to protect your business and customer data. We're also compliant with data protection regulations."
+    question: "Is my business data secure with Thyab?",
+    answer: "Security is our priority. Thyab uses industry-standard encryption, secure cloud storage, regular backups, and strict access controls to protect your business and customer data. We're also compliant with data protection regulations."
   }
 ];
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div className="faq-item">
+    <div className="border border-slate-200 rounded-lg mb-4 overflow-hidden">
       <button 
-        className="flex justify-between items-center w-full text-left py-4 focus:outline-none"
+        className="flex justify-between items-center w-full text-left py-4 px-6 bg-white hover:bg-slate-50 focus:outline-none transition-colors"
         onClick={onClick}
       >
         <span className="font-bold text-lg">{question}</span>
@@ -49,7 +49,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="pb-4 text-slate-600">{answer}</p>
+            <p className="pb-4 pt-2 px-6 text-slate-600 border-t border-slate-100">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -76,7 +76,7 @@ const FAQ = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Frequently Asked Questions</h2>
           <p className="text-lg text-slate-600">
-            Find answers to common questions about Thvab and how it can help your tailoring business.
+            Find answers to common questions about Thyab and how it can help your tailoring business.
           </p>
         </motion.div>
         

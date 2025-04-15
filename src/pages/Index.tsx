@@ -17,11 +17,11 @@ import Stats from '@/components/Stats';
 const Index = () => {
   useEffect(() => {
     // Add a class to the body for any global styles we want to apply
-    document.body.classList.add('thvab-app');
-    document.title = "Thvab - Modern Thobe Tailoring Management";
+    document.body.classList.add('thyab-app');
+    document.title = "Thyab - Modern Thobe Tailoring Management";
     
     return () => {
-      document.body.classList.remove('thvab-app');
+      document.body.classList.remove('thyab-app');
     };
   }, []);
 
@@ -34,7 +34,7 @@ const Index = () => {
     >
       <Navbar />
       
-      <main className="flex-grow">
+      <main className="flex-grow pt-20">
         <Hero />
         <Stats />
         <Features />

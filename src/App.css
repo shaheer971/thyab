@@ -1,7 +1,8 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -39,4 +40,40 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ensure content doesn't overflow on small screens */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix spacing issues on mobile */
+.py-24 {
+  @media (max-width: 640px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.py-16 {
+  @media (max-width: 640px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Fix text sizes on mobile */
+h1, h2, h3, h4, h5, h6 {
+  @media (max-width: 640px) {
+    word-break: break-word;
+  }
 }

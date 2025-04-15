@@ -35,17 +35,17 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200/70' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header className={`fixed top-3 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8`}>
+      <div className={`rounded-2xl mx-auto transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-md border border-slate-200/70' 
+          : 'bg-white/80 backdrop-blur-sm shadow-sm border border-slate-200/20'
+      }`}>
+        <div className="flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
           <div className="flex items-center">
             <a href="#" className="flex items-center space-x-2">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center text-white font-bold text-xl">T</div>
-              <span className="text-2xl font-bold text-slate-900">Thvab</span>
+              <span className="text-2xl font-bold text-slate-900">Thyab</span>
             </a>
           </div>
           
@@ -92,11 +92,11 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-slate-200 overflow-hidden"
+            className="md:hidden bg-white border border-slate-200 mt-2 rounded-xl shadow-lg overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6">
               <ul className="space-y-1 pt-2 pb-4">
