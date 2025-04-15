@@ -30,11 +30,11 @@ const Index = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen flex flex-col bg-slate-50"
+      className="min-h-screen flex flex-col bg-slate-50 w-full overflow-x-hidden"
     >
       <Navbar />
       
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-20 w-full overflow-x-hidden">
         <Hero />
         <Stats />
         <Features />

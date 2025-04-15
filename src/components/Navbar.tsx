@@ -35,8 +35,8 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`fixed top-3 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8`}>
-      <div className={`rounded-2xl mx-auto transition-all duration-300 ${
+    <header className="fixed top-3 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 w-full">
+      <div className={`rounded-2xl mx-auto transition-all duration-300 max-w-[100vw] ${
         scrolled 
           ? 'bg-white/90 backdrop-blur-md shadow-md border border-slate-200/70' 
           : 'bg-white/80 backdrop-blur-sm shadow-sm border border-slate-200/20'
@@ -96,7 +96,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border border-slate-200 mt-2 rounded-xl shadow-lg overflow-hidden"
+            className="md:hidden bg-white border border-slate-200 mt-2 rounded-xl shadow-lg overflow-hidden mx-auto max-w-[calc(100%-2rem)]"
           >
             <div className="px-4 pt-2 pb-6">
               <ul className="space-y-1 pt-2 pb-4">

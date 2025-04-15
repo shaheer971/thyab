@@ -63,8 +63,8 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-24 bg-white w-full overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[100vw]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ const Pricing = () => {
             >
               {plan.highlighted && (
                 <div className="absolute top-0 left-0 w-full flex justify-center">
-                  <div className="bg-brand-600 text-white text-xs font-bold py-1.5 px-4 rounded-b-xl flex items-center">
+                  <div className="relative bg-brand-600 text-white text-xs font-bold py-1.5 px-4 rounded-b-xl flex items-center mt-0">
                     <Star className="w-3.5 h-3.5 mr-1.5 fill-white" />
                     MOST POPULAR
                   </div>
